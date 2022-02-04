@@ -344,6 +344,9 @@ function ugokasu(e) {
     }
     if (e.keyCode == 38) {
         imuki = imuki + 1;
+        if (imuki > 3) {
+            imuki = 0;
+            }
     }
     
     // 移動・回転できるかどうかを確認
