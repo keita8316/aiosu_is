@@ -316,7 +316,31 @@ function shitaidou() {
         jikan = 1000;
     }
 }
+function shitaidou_ikki(){
+    gamegamen = document.getElementById('gmae');
+    cg = gamegamen.getContext('2d');
 
+    maenoix = ix;
+    maenoiy = iy;
+    maenoimuki = imuki;
+
+    kesu(cg, ix, iy, imuki, ishurui);
+
+    while(true){
+        kekka = kakunin(ix, iy, imuki, ishurui);
+        if(kekka){
+            iy = iy + 1;
+        }else{
+            iy = iy - 1;
+            kaku(cg, ix, iy, imuki, ishurui);
+            break;
+        }
+        
+
+    }
+    shitaidou();
+
+}
 function ugokasu(e) {
     // 描く先のCanvasを取得
     gamegamen = document.getElementById('game');
@@ -342,11 +366,14 @@ function ugokasu(e) {
     if (e.keyCode == 37) {
         ix = ix - 1;
     }
-    if (e.keyCode == 38) {
+    if (e.keyCode == 90) {
         imuki = imuki + 1;
         if (imuki > 3) {
             imuki = 0;
             }
+    }
+    if (e.keyCode == 38) {
+        shitaidou_ikki();
     }
     
     // 移動・回転できるかどうかを確認
