@@ -336,6 +336,15 @@ function ugokasu(e) {
     if (e.keyCode == 40) {
         shitaidou();
     }
+    if (e.keyCode == 39) {
+        ix = ix + 1;
+    }
+    if (e.keyCode == 37) {
+        ix = ix - 1;
+    }
+    if (e.keyCode == 38) {
+        imuki = imuki + 1;
+    }
     
     // 移動・回転できるかどうかを確認
     kekka = kakunin(ix, iy, imuki, ishurui);
